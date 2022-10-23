@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
+  const images = [
+    "/assets/gallery/1.png",
+    "/assets/gallery/2.png",
+    "/assets/gallery/3.png",
+    "/assets/gallery/1.png",
+    "/assets/gallery/2.png",
+    "/assets/gallery/3.png",
+    "/assets/gallery/1.png",
+    "/assets/gallery/2.png",
+    "/assets/gallery/3.png",
+    "/assets/gallery/1.png",
+    "/assets/gallery/2.png",
+    "/assets/gallery/3.png",
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col gap-4 justify-between p-4">
+      <h1 className="text-7xl text-center font-bold">Gallery</h1>
+      <div className="flex-1 grid gap-4 my-20 grid-cols-4 grid-rows-1 overflow-hidden">
+        {images.map((image)=>{
+        return <img className="object-cover w-full h-[200px]" alt="" src={image} />})}
+      </div>
     </div>
   );
 }
